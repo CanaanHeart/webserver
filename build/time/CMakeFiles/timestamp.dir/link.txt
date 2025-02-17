@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -O2 -Wall -g -shared -Wl,-soname,libtimestamp.so -o /home/zxc/MProj/webserver/web_server/lib/libtimestamp.so CMakeFiles/timestamp.dir/TimeStamp.cpp.o   -L/home/zxc/MProj/webserver/web_server/lib 

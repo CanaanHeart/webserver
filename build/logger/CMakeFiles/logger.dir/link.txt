@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -O2 -Wall -g -shared -Wl,-soname,liblogger.so -o /home/zxc/MProj/webserver/web_server/lib/liblogger.so CMakeFiles/logger.dir/FileManager.cpp.o CMakeFiles/logger.dir/Logger.cpp.o   -L/home/zxc/MProj/webserver/web_server/lib 

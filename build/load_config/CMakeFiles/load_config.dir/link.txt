@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -O2 -Wall -g -shared -Wl,-soname,libload_config.so -o /home/zxc/MProj/webserver/web_server/lib/libload_config.so CMakeFiles/load_config.dir/LoadConfig.cpp.o   -L/home/zxc/MProj/webserver/web_server/lib  -Wl,-rpath,/home/zxc/MProj/webserver/web_server/lib /home/zxc/MProj/webserver/web_server/lib/liblogger.so 
