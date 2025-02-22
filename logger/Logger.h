@@ -57,16 +57,17 @@ void msgs_comb(std::ostringstream &oss, T t, Args... args)
 }
 
 struct LogSwitch{
-    std::string logSwitch;  // 日志开关
-    std::string logFileSwitch;  // 日志是否写入文件
-    std::string logTerminalSwitch;  // 日志是否打印到终端
-    std::string logFileQueueSwitch; // 是否开启队列策略
-    std::string logName;  // 日志文件名
-    std::string logFilePath;  // 日志文件保存路径
-    std::string logMaxSize;  // 日志文件最大大小
-    std::string logBehavior;  // 日志文件达到最大的行为
-    std::string logOutputLevelFile;  // 日志输出等级
-    std::string logOutputLevelTerminal;  // 日志输出等级
+    std::string logSwitch;              // 日志开关
+    std::string logFileSwitch;          // 日志是否写入文件
+    std::string logTerminalSwitch;      // 日志是否打印到终端
+    std::string logFileQueueSwitch;     // 是否开启队列策略
+    std::string logFileQueueSize;       // 缓冲队列大小
+    std::string logName;                // 日志文件名
+    std::string logFilePath;            // 日志文件保存路径
+    std::string logMaxSize;             // 日志文件最大大小
+    std::string logBehavior;            // 日志文件达到最大的行为
+    std::string logOutputLevelFile;     // 日志输出等级
+    std::string logOutputLevelTerminal; // 日志输出等级
 };
 
 class Logger{

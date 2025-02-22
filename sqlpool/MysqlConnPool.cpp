@@ -39,57 +39,69 @@ MysqlConnPool& MysqlConnPool::GetInstance()
 
 void MysqlConnPool::Init()
 {
-    map<string, string> conf = InitConfig();
+    slc_.LoadConfigFile("../conf/sqlpool.conf");
+
+    ip_ = slc_.GetValue("ip");
+    user_ = slc_.GetValue("user");
+    passwd_ = slc_.GetValue("passWd");
+    db_name_ = slc_.GetValue("dbName");
+    port_ = static_cast<uint16_t>(stoi(slc_.GetValue("port")));
+    max_conns_ = stoi(slc_.GetValue("maxConns"));
+    min_conns_ = stoi(slc_.GetValue("minConns"));
+    timeout_ = stoi(slc_.GetValue("timeout"));
+    idle_time_ = stoi(slc_.GetValue("idleTime"));
+
+    // map<string, string> conf = InitConfig();
     
-    ip_ = conf.at("ip");
-    user_ = conf.at("user");
-    passwd_ = conf.at("passWd");
-    db_name_ = conf.at("dbName");
-    port_ = stoi(conf.at("port"));
-    max_conns_ = stoi(conf.at("maxConns"));
-    min_conns_ = stoi(conf.at("minConns"));
-    timeout_ = stoi(conf.at("timeout"));
-    idle_time_ = stoi(conf.at("idleTime"));
+    // ip_ = conf.at("ip");
+    // user_ = conf.at("user");
+    // passwd_ = conf.at("passWd");
+    // db_name_ = conf.at("dbName");
+    // port_ = stoi(conf.at("port"));
+    // max_conns_ = stoi(conf.at("maxConns"));
+    // min_conns_ = stoi(conf.at("minConns"));
+    // timeout_ = stoi(conf.at("timeout"));
+    // idle_time_ = stoi(conf.at("idleTime"));
 }
 
-map<string, string> MysqlConnPool::InitConfig()
-{
-    map<string, string> sqlpoolConf;
+// map<string, string> MysqlConnPool::InitConfig()
+// {
+//     map<string, string> sqlpoolConf;
 
-    string line;
-    ifstream ifs;
+//     string line;
+//     ifstream ifs;
 
-    ifs.open("../conf/sqlpool.conf");
-    if(!ifs.is_open()){
-        ERROR("file sqlpool.conf open fail!");
-    }
+//     ifs.open("../conf/sqlpool.conf");
+//     if(!ifs.is_open()){
+//         ERROR("file sqlpool.conf open fail!");
+//     }
 
-    while(getline(ifs, line)){
-        if(line.empty() || line[0] == '#')
-            continue;
+//     while(getline(ifs, line)){
+//         if(line.empty() || line[0] == '#')
+//             continue;
         
-        string line_copy;
-        for (size_t i = 0; i < line.size(); i++)
-        {
-            if(line[i] == ' ')
-                continue;
-            line_copy += line[i];
-        }
+//         string line_copy;
+//         for (size_t i = 0; i < line.size(); i++)
+//         {
+//             if(line[i] == ' ')
+//                 continue;
+//             line_copy += line[i];
+//         }
 
-        size_t pos = line_copy.find('=');
-        if(pos == std::string::npos){
-            WARN("config file error!");
-            continue;
-        }
+//         size_t pos = line_copy.find('=');
+//         if(pos == std::string::npos){
+//             WARN("config file error!");
+//             continue;
+//         }
 
-        string key_str = line_copy.substr(0, pos);
-        string value_str = line_copy.substr(pos + 1);
+//         string key_str = line_copy.substr(0, pos);
+//         string value_str = line_copy.substr(pos + 1);
         
-        sqlpoolConf[key_str] = value_str;
-    }
+//         sqlpoolConf[key_str] = value_str;
+//     }
 
-    return sqlpoolConf;
-}
+//     return sqlpoolConf;
+// }
 
 void MysqlConnPool::CreateConn()
 {

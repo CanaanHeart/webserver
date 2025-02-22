@@ -78,6 +78,7 @@ void Logger::InitLogConfig()
     flogConfInfo["logFileSwitch"] = &log_switch_.logFileSwitch;
     flogConfInfo["logTerminalSwitch"] = &log_switch_.logTerminalSwitch;
     flogConfInfo["logFileQueueSwitch"] = &log_switch_.logFileQueueSwitch;
+    flogConfInfo["logFileQueueSize"] = &log_switch_.logFileQueueSize;
     flogConfInfo["logName"] = &log_switch_.logName;
     flogConfInfo["logFilePath"] = &log_switch_.logFilePath;
     flogConfInfo["logMaxSize"] = &log_switch_.logMaxSize;
@@ -294,8 +295,7 @@ bool Logger::InsertQueue(std::string msgs, std::string filename)
     unique_lock<mutex> uq(mtx_queue_);
     qu_.push(msgs);
     
-    if(qu_.size() >= 100){
-        unique_lock<mutex> uq(mtx_queue_);
+    if(qu_.size() >= stoi(log_switch_.logFileQueueSize)){
         ofstream ofs(filename, ios::app | ios::out);
         if(!ofs){
             cout << "文件打开失败！" << endl;

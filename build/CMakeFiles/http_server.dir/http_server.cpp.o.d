@@ -304,6 +304,8 @@ CMakeFiles/http_server.dir/http_server.cpp.o: \
  /usr/include/mysql/errmsg.h \
  /home/zxc/MProj/webserver/web_server/inc/../http/../sqlpool/MysqlConnPool.h \
  /home/zxc/MProj/webserver/web_server/inc/../http/../sqlpool/MysqlConn.h \
+ /home/zxc/MProj/webserver/web_server/inc/../http/../sqlpool/SqlLoadConfig.h \
+ /home/zxc/MProj/webserver/web_server/inc/../http/../sqlpool/../load_config/LoadConfig.h \
  /usr/include/c++/9/unordered_set /usr/include/c++/9/bits/unordered_set.h \
  /usr/include/c++/9/regex /usr/include/c++/9/bitset \
  /usr/include/c++/9/iterator /usr/include/c++/9/bits/stream_iterator.h \

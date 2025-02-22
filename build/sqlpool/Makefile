@@ -178,6 +178,30 @@ MysqlConnPool.cpp.s:
 	cd /home/zxc/MProj/webserver/web_server/build && $(MAKE) $(MAKESILENT) -f sqlpool/CMakeFiles/sqlpool.dir/build.make sqlpool/CMakeFiles/sqlpool.dir/MysqlConnPool.cpp.s
 .PHONY : MysqlConnPool.cpp.s
 
+SqlLoadConfig.o: SqlLoadConfig.cpp.o
+.PHONY : SqlLoadConfig.o
+
+# target to build an object file
+SqlLoadConfig.cpp.o:
+	cd /home/zxc/MProj/webserver/web_server/build && $(MAKE) $(MAKESILENT) -f sqlpool/CMakeFiles/sqlpool.dir/build.make sqlpool/CMakeFiles/sqlpool.dir/SqlLoadConfig.cpp.o
+.PHONY : SqlLoadConfig.cpp.o
+
+SqlLoadConfig.i: SqlLoadConfig.cpp.i
+.PHONY : SqlLoadConfig.i
+
+# target to preprocess a source file
+SqlLoadConfig.cpp.i:
+	cd /home/zxc/MProj/webserver/web_server/build && $(MAKE) $(MAKESILENT) -f sqlpool/CMakeFiles/sqlpool.dir/build.make sqlpool/CMakeFiles/sqlpool.dir/SqlLoadConfig.cpp.i
+.PHONY : SqlLoadConfig.cpp.i
+
+SqlLoadConfig.s: SqlLoadConfig.cpp.s
+.PHONY : SqlLoadConfig.s
+
+# target to generate assembly for a file
+SqlLoadConfig.cpp.s:
+	cd /home/zxc/MProj/webserver/web_server/build && $(MAKE) $(MAKESILENT) -f sqlpool/CMakeFiles/sqlpool.dir/build.make sqlpool/CMakeFiles/sqlpool.dir/SqlLoadConfig.cpp.s
+.PHONY : SqlLoadConfig.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -193,6 +217,9 @@ help:
 	@echo "... MysqlConnPool.o"
 	@echo "... MysqlConnPool.i"
 	@echo "... MysqlConnPool.s"
+	@echo "... SqlLoadConfig.o"
+	@echo "... SqlLoadConfig.i"
+	@echo "... SqlLoadConfig.s"
 .PHONY : help
 
 

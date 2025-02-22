@@ -248,6 +248,9 @@ http/CMakeFiles/http.dir/HttpRequest.cpp.o: \
  /usr/include/mysql/errmsg.h \
  /home/zxc/MProj/webserver/web_server/http/../sqlpool/MysqlConnPool.h \
  /home/zxc/MProj/webserver/web_server/http/../sqlpool/MysqlConn.h \
+ /home/zxc/MProj/webserver/web_server/http/../sqlpool/SqlLoadConfig.h \
+ /home/zxc/MProj/webserver/web_server/http/../sqlpool/../load_config/LoadConfig.h \
+ /home/zxc/MProj/webserver/web_server/http/../sqlpool/../load_config/../logger/Logger.h \
  /usr/include/c++/9/condition_variable \
  /usr/include/c++/9/ext/concurrence.h \
  /usr/include/c++/9/bits/shared_ptr.h \

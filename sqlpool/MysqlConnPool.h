@@ -3,6 +3,7 @@
 
 #include "../logger/Logger.h"
 #include "MysqlConn.h"
+#include "SqlLoadConfig.h"
 
 #include <iostream>
 #include <queue>
@@ -20,6 +21,7 @@ using SP_MysqlConn = std::shared_ptr<MysqlConn>;
 class MysqlConnPool
 {
 private:
+    SqlLoadConfig slc_;
     std::string ip_;
     std::string user_;
     std::string passwd_;
@@ -37,7 +39,7 @@ private:
 private:
     MysqlConnPool();
     void Init();
-    std::map<std::string, std::string> InitConfig();
+    // std::map<std::string, std::string> InitConfig();
     void ProduceMysqlConn();
     void DestructMysqlConn();
     void CreateConn();

@@ -149,6 +149,8 @@ void HttpRequest::ParseBody(const string &lines)
 
 void HttpRequest::ParseFormData(const string &lines)
 {
+    DEBUG("data: ", lines);
+
     if(method_ != "POST")
         return;
     if(header_.count("Content-Type") != 1){
@@ -165,6 +167,8 @@ void HttpRequest::ParseFormData(const string &lines)
     string boundary = header_.at("Content-Type").substr(pos);
     string sep1 = "\r\n\r\n";
     string sep2 = "name=\"";
+
+    DEBUG("boundary: ", boundary);
 
     pos = 0;
     while(pos != string::npos){

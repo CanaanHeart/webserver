@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sqlpool.dir/MysqlConn.cpp.o.d"
   "CMakeFiles/sqlpool.dir/MysqlConnPool.cpp.o"
   "CMakeFiles/sqlpool.dir/MysqlConnPool.cpp.o.d"
+  "CMakeFiles/sqlpool.dir/SqlLoadConfig.cpp.o"
+  "CMakeFiles/sqlpool.dir/SqlLoadConfig.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

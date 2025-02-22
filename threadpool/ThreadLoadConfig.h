@@ -3,13 +3,12 @@
 
 #include "../load_config/LoadConfig.h"
 
-class ThreadLoadConfig
+class ThreadLoadConfig:public LoadConfig
 {
 private:
     LoadConfig lc_;
 public:
-    void LoadConfigFile(const std::string &file);
-    std::string GetValue(const std::string &key);
+    ThreadLoadConfig() = default;
 };
 
 #endif /* __THREADLOADCONFIG_H__ */
